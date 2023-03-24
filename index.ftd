@@ -187,6 +187,24 @@ Please note that there is no link back to syllabus or board, this is done
 intentionally so a concept can be re-used in different syllabus. Concept is
 just a URL. The content of the concept page can be ignored.
 
+
+-- ds.h3: Deprecation Of Concept
+
+From time to time maintainer of a `concept` may realise their concept is
+actually a duplicate of some other concept and would want to let everyone using
+their concept know of this.
+
+They can do so by adding:
+
+-- ds.code: current concept deciding to deprecate themselves
+lang: html
+
+<head>
+    <meta name="ednet-entity" content="concept">
+    <meta name="ednet-canonical-concept" content="the other concept"
+</head>
+
+
 -- ds.h2: Content
 
 Content can be present on any URL. The content can express what concepts it is
@@ -313,5 +331,35 @@ Math's "irrational numbers" may have the concept url of
 `https://cbse.org/10th/maths/irrational-numbers/`, but ICSE in 10th may teach
 exactly the same concept, but they may end up creating their own URL:
 `https://icse.com/10/mathematics/numbers/irrational/`.
+
+The xray information helps identify such duplications. The incentive of the
+content author is to make their content as widely used as possible as content
+creator may not care about money (being part of ednet netowrk does not itself
+earn you money, this is for making world a better place), but how often your
+content is included and used by learners is still a metric we believe will
+drive some content creators. Those content creators have incentive to add as
+many concept urls in their content meta data. Now simply spamming will not help
+the reputation of the author, they will appear smappy, lose credibility with
+teachers, so they will only put the link to concepts they truly believe (and
+can see from data that they are indeed helpul for) is relevant.
+
+Syllabus creators are also getting the same xray information. And they can see
+what content is being recommended for the concept in their syllabus, what other
+concepts, that are not part of they syllabus, but is getting taught using the
+same content. If a content is teaching more than one concept, there is a
+possiblity they are duplicate. Analysing the content concept linkages, and xray
+data, gives an picture of concept duplication. The syllabus creators can act on
+this knowledge and remove (deprecate) their concept URLs and start using the
+more popular concept URLs.
+
+This way the concept URLs will start to cluster, and duplication will go down.
+Eg if `content a` was written and tagged only with `concept x` and `content b`
+with `concept y`, and if clustering puts `concept x` and `concept y` as
+duplicates, and syullabus creator who used `concept y` examines the data and
+decides `concept x` and `concept y` are indeed duplicate, syllabus author will
+ask concept maintainer of `concept y` to derecate themselves in favour of
+`concept x`, and if that is done, both `content a` and `content b` will become
+available to learners of `concept x` (which is also now learners of `concept
+y`).
 
 -- end: ds.page
