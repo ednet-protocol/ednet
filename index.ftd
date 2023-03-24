@@ -11,6 +11,53 @@ Our goal is to make learning accessible to everyone in the world. To be part of
 `ednet` network, all content should be public and licensed under permissible
 license.
 
+
+-- ds.h1: High Level Protocol Design Guidelines
+
+-- ds.h2: Complete Lack Of Authority
+
+Anyone create a board, or anyone create content etc. No need for "politics" of
+talking to the right people. Autonomous protocol.
+
+-- ds.h2: As Software Light As Possible
+
+Websites go down. If one uses any dynamic language, or database etc, keeping
+site up is hard. Therefore all the pages are static pages.
+
+-- ds.h2: Fully Download-able Content
+
+Standardised on FTD (subset). So that it works on as many devices as possible,
+and yet is as interactive as it can be. We can't do PDF which is most widely
+supported, but lacks interactivity etc.
+
+-- ds.h2: Study Without Internet
+
+Once learner has "subscribed" to a class, their app (browser extension, desktop
+or mobile app can download entire content). And then on, no internet is
+required. Xray uploads would be done opportunistically, when the internet is
+available, in the background.
+
+-- ds.h2: Data Collection Done In Privacy Friendly Way
+
+Only teachers can identify students. Content creators, board etc can not. And
+only xray information is availble, not any other information.
+
+-- ds.h2: Self Learning But With Guides
+
+Teachers are needed at times.
+
+-- ds.h2: Low Hardware/Power Requirements
+
+We want people in remote areas with limited access to internet, elecronic
+devices, power etc to be able to learn using the `ednet` network. We will be
+identify low powered tablets and all content should support those devices.
+
+Content should fail gracefully in case there is a hardware or internet or power
+constraint, for example if there is not enough internet, maybe only download
+and show text. If some more internet is there also download images. And then
+videos. Content is consumable even if only text is available.
+
+
 -- ds.h1: Key Concepts Of *`ednet` Protocol*
 
 -- ds.h2: Board Of Education
@@ -179,6 +226,7 @@ lang: html
 
 <head>
     <meta name="ednet-entity" content="concept">
+    <meta name="dependency" content="<url of other dependency>">
 </head>
 
 -- ds.markdown:
